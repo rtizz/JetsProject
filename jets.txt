@@ -1,4 +1,7 @@
 Figher,F15,speed,range,price
+Fighter,A-10,speed,range,price
 Cargo,C130,speed,range,price
+Cargo,C-5,speed,range,price
 Bomber,B52,speed,range,price
 Passenger,737,speed,range,price
+Passenger,Cesna,speed,range,price
