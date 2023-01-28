@@ -1,7 +1,6 @@
-Figher,F15,speed,range,price
-Fighter,A-10,speed,range,price
-Cargo,C130,speed,range,price
-Cargo,C-5,speed,range,price
-Bomber,B52,speed,range,price
-Passenger,737,speed,range,price
-Passenger,Cesna,speed,range,price
+Fighter,F-15,570.0,2992,97900000,30mm,GBU31
+Fighter,A-10,348.0,2578,10100000,30mm,Hellfires
+Cargo,C-130,336.0,2361,75500000,42000
+Cargo,C-5,540.0,7273,167700000,281001
+Passenger,Boeing-737,514.0,3825,121600000,350
+Passenger,Cessna-167,168.0,915,166670,12

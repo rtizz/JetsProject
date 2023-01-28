@@ -3,19 +3,30 @@ package com.skilldistillery.entities;
 import java.util.Objects;
 
 public abstract class Jet {
+	private String type;
 	private String model;
-	private String speed;
+	private Double speed;
 	private int range;
 	private long price;
 	
 	
-	public Jet(String model, String speed, int range, long price) {
-		super();
+	public Jet() {
+		
+	}
+	
+	public Jet(String type, String model, Double speed, int range, long price) {
+		this.type = type;
 		this.model = model;
 		this.speed = speed;
 		this.range = range;
 		this.price = price;
 	}
+	
+	public void getSpeedInMach() {
+		
+	}
+	
+	public abstract void fly();
 
 
 	public String getModel() {
@@ -28,12 +39,12 @@ public abstract class Jet {
 	}
 
 
-	public String getSpeed() {
+	public Double getSpeed() {
 		return speed;
 	}
 
 
-	public void setSpeed(String speed) {
+	public void setSpeed(Double speed) {
 		this.speed = speed;
 	}
 
