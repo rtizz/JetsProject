@@ -3,6 +3,8 @@ package com.skilldistillery.entities;
 import java.util.Objects;
 
 public abstract class Jet {
+//	private static int aircraftId = 000;
+//	private int id;
 	private String type;
 	private String model;
 	private Double speed;
@@ -15,6 +17,8 @@ public abstract class Jet {
 	}
 	
 	public Jet(String type, String model, Double speed, int range, long price) {
+//		aircraftId = aircraftId +1;
+//		this.id = aircraftId;
 		this.type = type;
 		this.model = model;
 		this.speed = speed;
@@ -71,15 +75,13 @@ public abstract class Jet {
 
 	@Override
 	public String toString() {
-		return "Jet [model=" + model + ", speed=" + speed + ", range=" + range + ", price=" + price + "]";
+		return "Jet [Model= " + model + ", speed=" + speed + ", range=" + range + ", price=" + price + "]";
 	}
-
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(model, price, range, speed);
+		return Objects.hash(model);
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -90,10 +92,10 @@ public abstract class Jet {
 		if (getClass() != obj.getClass())
 			return false;
 		Jet other = (Jet) obj;
-		return Objects.equals(model, other.model) && price == other.price && range == other.range
-				&& Objects.equals(speed, other.speed);
+		return Objects.equals(model, other.model);
 	}
-	
+
+
 
 
 }

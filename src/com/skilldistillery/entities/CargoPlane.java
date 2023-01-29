@@ -32,7 +32,8 @@ public class CargoPlane extends Jet implements CargoCarrier {
 		System.out.println("______________________________________________________________________________________");
 	}
 
-	public void loadCargo() {	System.out.println("___________________________________________________________");
+	public void loadCargo() {	
+System.out.println("LOAD AIRCRAFT");		System.out.println("___________________________________________________________");
 		System.out.println(
 				"Loading Cargo Aircraft: " + this.getModel() + "\nREMINDER: MAX WEIGHT ALLOWED IS: " + this.maxWeight);
 		System.out.println("___________________________________________________________");
@@ -44,4 +45,5 @@ public class CargoPlane extends Jet implements CargoCarrier {
 				+ ", Price: " + getPrice() + ", Max Weight: " + maxWeight + "]";
 	}
 
+	
 }

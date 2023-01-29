@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Airfield {
@@ -66,6 +67,7 @@ public class Airfield {
 			}
 		}
 		System.out.println("The fastest aircraft is " + fastest);
+		System.out.println();
 
 	}
 
@@ -79,6 +81,7 @@ public class Airfield {
 			}
 		}
 		System.out.println("The aircraft with the longest range is " + longest);
+		System.out.println();
 
 	}
 
@@ -108,5 +111,24 @@ public class Airfield {
 	public void removeJet(Jet jet) {
 		fleet.remove(jet);
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(fleet);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Airfield other = (Airfield) obj;
+		return Objects.equals(fleet, other.fleet);
+	}
+
+
 
 }

@@ -20,13 +20,13 @@ public class FighterJet extends Jet implements CombatReady {
 		DecimalFormat df = new DecimalFormat("#.#");	
 		double flightTime = this.getRange() / this.getSpeed();
 		System.out.println("______________________________________________________________________________________");
-		System.out.println("Fighter jet " + this.getModel() + " Taking Off!\n With max range of " + this.getRange() + "NM at cruising speed of " + this.getSpeed()+ " MPH, flying time is " + df.format(flightTime) + "hrs.");
+		System.out.println("Fighter jet " + this.getModel() + " Taking Off!\nWith max range of " + this.getRange() + "NM at cruising speed of " + this.getSpeed()+ " MPH, flying time is " + df.format(flightTime) + "hrs.");
 		System.out.println("______________________________________________________________________________________");
 	}
 	
 	public void fight() {
+		System.out.println("Fight!");
 		if(this.getModel().equals("A-10")) {
-System.out.println("Fight!");
 System.out.println("_______________________________________________________________");
 			System.out.println(this.getModel() + " Requesting gunrun! Final attack heading 070 degrees mag!");
 			System.out.println("Using " + this.guns  + " guns");
