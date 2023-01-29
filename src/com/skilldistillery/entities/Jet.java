@@ -3,8 +3,6 @@ package com.skilldistillery.entities;
 import java.util.Objects;
 
 public abstract class Jet {
-//	private static int aircraftId = 000;
-//	private int id;
 	private String type;
 	private String model;
 	private Double speed;
@@ -17,8 +15,6 @@ public abstract class Jet {
 	}
 	
 	public Jet(String type, String model, Double speed, int range, long price) {
-//		aircraftId = aircraftId +1;
-//		this.id = aircraftId;
 		this.type = type;
 		this.model = model;
 		this.speed = speed;

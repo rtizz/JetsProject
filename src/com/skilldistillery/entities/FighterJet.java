@@ -16,6 +16,7 @@ public class FighterJet extends Jet implements CombatReady {
 	this.missiles = missiles;
 	}
 	
+//flies all fighters	
 	public void fly() {
 		DecimalFormat df = new DecimalFormat("#.#");	
 		double flightTime = this.getRange() / this.getSpeed();
@@ -23,7 +24,7 @@ public class FighterJet extends Jet implements CombatReady {
 		System.out.println("Fighter jet " + this.getModel() + " Taking Off!\nWith max range of " + this.getRange() + "NM at cruising speed of " + this.getSpeed()+ " MPH, flying time is " + df.format(flightTime) + "hrs.");
 		System.out.println("______________________________________________________________________________________");
 	}
-	
+//implementation of interface	
 	public void fight() {
 		System.out.println("Fight!");
 		if(this.getModel().equals("A-10")) {

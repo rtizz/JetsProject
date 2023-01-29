@@ -13,10 +13,10 @@ public class JetsApp {
 	private Airfield airF = new Airfield();
 	private Scanner sc = new Scanner(System.in);
 	private String fileName = "jets.txt";
-
+//main method
 	public static void main(String[] args) {
 		JetsApp ja = new JetsApp();
-		boolean isTrue = true;
+		boolean isTrue = true; //controlling variable for displayUserMenu loop.
 
 		ja.launch();
 		while (isTrue) {
@@ -24,58 +24,55 @@ public class JetsApp {
 		}
 		ja.sc.close();
 	}
-
+//launch method - calls airfield
 	private void launch() {
 		airF.readJets(fileName);
-//		List<Jet> output = airF.readJets(fileName);
-//		System.out.println(output);
-
 	}
-
+//diplayUserMenu - calls on all other classes through switch statement
 	private boolean displayUserMenu(Scanner sc) {
-
+//long lines are annoying in code but cleans up output significantly
 		System.out.println("Main Menu:");
 		System.out.println("Select the corresponding number from the menu below.");
 		System.out.println();
 		System.out.println(
-				"1. List Fleet\n2. Fly all Jets\n3. View fastest jet\n4. View jet with longest range\n5. Load all Cargo Jets\n6. Dogfight!\n7. Add a jet to Fleet\n8. Remove a jet from Fleet\n9. Quit\n");
+				"1. List fleet\n2. Fly all aircraft\n3. View fastest aircraft\n4. View aircraft with longest range\n5. Load all Cargo Planes\n6. Dogfight!\n7. Add an aircraft to fleet\n8. Remove an aircraft from fleet\n9. Quit\n");
 		int numSelection = sc.nextInt();
 		switch (numSelection) {
-		case 1:
+		case 1: //Lists all aircraft
 			for (Jet jet : airF.getFleet()) {
 				System.out.println(jet);
 				System.out.println(
 						"__________________________________________________________________________________________________________________________");
 			}
 			break;
-		case 2:
+		case 2:// calls fly method in each aircraft
 			System.out.println("Cleared for takeoff");
 			for (Jet jetToFly : airF.getFleet()) {
 				jetToFly.fly();
 			}
 			break;
-		case 3:
+		case 3://calls airfield to display fastest aircraft
 			airF.showFastedJet();
 			break;
-		case 4:
+		case 4://calls airfield to display aircraft with longest range
 			airF.showLongestRange();
 			break;
-		case 5:
+		case 5://calls airfield which partially implements and calls CargoPlane 
 			airF.loadingCargo();
 			break;
-		case 6:
+		case 6://calls airfield which partially implements and calls FighterJet.
 			airF.dogFight();
 			break;
-		case 7:
+		case 7: //called method below and allows new menu to prompt user to add to fleet.
 			addNewJet(sc);
 			break;
-		case 8:
+		case 8://called additional method below and allows new menu to prompt user to remove from fleet.
 			removeJet(sc);
 			break;
-		case 9:
+		case 9://quits program and returns false for boolean value to end while loop.
 			System.out.println("Quitting Program");
 			return false;
-		default:
+		default://corrects user if number other than 1-9 entered
 			if (numSelection < 1 || numSelection > 9) {
 				System.err.println(
 						"Invalid Entry: Please select numbers 1-9.\nEnter any number and select enter to return to menu");
@@ -87,7 +84,7 @@ public class JetsApp {
 		return true;
 	}
 
-	public void addNewJet(Scanner sc) {
+	private void addNewJet(Scanner sc) {
 		String newType, newModel, newGuns, newMissiles;
 		Double newSpeed;
 		int newRange, newMaxWeight, newCapacity, selection;
@@ -161,8 +158,8 @@ public class JetsApp {
 			break;
 		}
 	}
-
-	public void removeJet(Scanner sc) {
+//Provides list of models for user to remove.
+	private void removeJet(Scanner sc) {
 	String jetToRemove = null;
 	System.out.println("Choose which aircraft to remove by typing in the model as it is written");
 	for (Jet jet : airF.getFleet()) {
@@ -171,7 +168,7 @@ public class JetsApp {
 	
 	jetToRemove = sc.next();
 	sc.nextLine();
-	try {
+	try {//For some reason, compiler didn't like the additional foreach loop, had to put trycatch in to sweep under rug.
 	for (Jet rmJet : airF.getFleet()) {
 		if(jetToRemove.equalsIgnoreCase(rmJet.getModel())) {
 			airF.removeJet(rmJet);

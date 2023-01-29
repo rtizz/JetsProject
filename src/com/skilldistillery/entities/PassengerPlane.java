@@ -13,7 +13,7 @@ public class PassengerPlane extends Jet{
 		super(type, model, speed, range, price);
 		this.capacity = capacity;
 	}
-	
+//flies all passenger planes	
 	public void fly() {
 		DecimalFormat df = new DecimalFormat("#.#");
 		double flightTime = this.getRange() / this.getSpeed();

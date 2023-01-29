@@ -22,7 +22,7 @@ public class CargoPlane extends Jet implements CargoCarrier {
 	public void setMaxWeight(int maxWeight) {
 		this.maxWeight = maxWeight;
 	}
-
+//flies all cargo planes
 	public void fly() {
 		DecimalFormat df = new DecimalFormat("#.#");
 		double flightTime = this.getRange() / this.getSpeed();		System.out.println("______________________________________________________________________________________");
@@ -31,7 +31,7 @@ public class CargoPlane extends Jet implements CargoCarrier {
 				+ "hrs.");
 		System.out.println("______________________________________________________________________________________");
 	}
-
+	//implementation of interface	
 	public void loadCargo() {	
 System.out.println("LOAD AIRCRAFT");		System.out.println("___________________________________________________________");
 		System.out.println(

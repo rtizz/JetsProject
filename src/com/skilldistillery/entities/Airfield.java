@@ -10,13 +10,10 @@ import java.util.Scanner;
 
 public class Airfield {
 	private List<Jet> fleet = new ArrayList<>();
-	private Scanner sc = new Scanner(System.in);
-	private Jet j;
-
 	public Airfield() {
 
 	}
-
+//readJets - ran via launch in jetsApp - takes in file information to convert to array
 	public List<Jet> readJets(String fileName) {
 		Jet j = null;
 		try (BufferedReader bufIn = new BufferedReader(new FileReader(fileName))) {
@@ -50,14 +47,13 @@ public class Airfield {
 		}
 		return fleet;
 	}
-
+//called in switch statement JetsApp
 	public List<Jet> getFleet() {
 		return fleet;
 
 	}
-
+//called in switch statement JetsApp - cycles through to compare fastest in MPH
 	public void showFastedJet() {
-//	for (Jet jet : fleet) {
 		Jet fastest = null;
 		double fastestJet = 0.0;
 		for (int jet = 0; jet < fleet.size(); jet++) {
@@ -70,7 +66,7 @@ public class Airfield {
 		System.out.println();
 
 	}
-
+//called in switch statement JetsApp - cycles through to compare aircraft which have longest range
 	public void showLongestRange() {
 		Jet longest = null;
 		int longestRange = 0;
@@ -84,30 +80,30 @@ public class Airfield {
 		System.out.println();
 
 	}
-
+//called in switch statement and calls CargoCarrier -> CargoPlane to add information
 	public void loadingCargo() {
 		for (Jet jet : fleet) {
 			if (jet instanceof CargoPlane) {
-				((CargoPlane) jet).loadCargo();
+				((CargoCarrier) jet).loadCargo();
 
 			}
 		}
 	}
-	
+//called in switch statement and calls Combat Ready -> FigherJet to add information	
 	public void dogFight() {
 		for (Jet jet : fleet) {
 			if (jet instanceof FighterJet) {
-				((FighterJet) jet).fight();
+				((CombatReady) jet).fight();
 
 			}
 		}
 	}
-
+//Initial syntax added in JetsApp under addNewJet then passed here to add to fleet
 	public void addNewJet(Jet jet) {
 		fleet.add(jet);
 		
 	}
-
+//Initial syntax added in JetsApp under removeJet then passed here to remove from fleet
 	public void removeJet(Jet jet) {
 		fleet.remove(jet);
 	}
